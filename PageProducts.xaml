@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cx="clr-namespace:PM2Parcial3.ViewModels"
+             x:Class="PM2Parcial3.PageProducts"
+             Title="PageProducts">
+    <ContentPage.BindingContext>
+        <cx:ProductosViewmodel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid Margin="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Descripcion Articulo"/>
+            <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Nombre}"/>
+            <Entry Placeholder="Precio" Text="{Binding Precio}" />
+            <Entry Placeholder="Foto" Text="{Binding Foto}" />
+            <Button Text="Guardar" Command="{Binding GuardarCommand}" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
